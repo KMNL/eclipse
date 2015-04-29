@@ -85,6 +85,15 @@ public class InterviewQ {
 		return maxProfit;
 	}
 	
+	/**
+	 * Write a program that prints the following strings with the given probability
+	 * Output string   Probability
+	 *      A			15%
+	 *		B			25%
+	 *		C			50%
+	 *		D			10%
+	 * @return A,B,C,or D based on the weighted probability
+	 */
 	public static char findWeightedRandomChar(){
 		char [] charArray= {'A','B','C','D'};
 		double [] weightedNumber = {0.15d,0.25d,0.5d, 0.1d};
