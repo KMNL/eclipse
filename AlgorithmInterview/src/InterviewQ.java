@@ -85,6 +85,7 @@ public class InterviewQ {
 		return maxProfit;
 	}
 	
+	public 
 	/**
 	 * Write a program that prints the following strings with the given probability
 	 * Output string   Probability
