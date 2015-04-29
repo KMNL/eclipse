@@ -102,7 +102,7 @@ public class InterviewQ {
 			randomNumber -= weightedNumber[i];
 			if(randomNumber < 0.0d){
 				return charArray[i];
-			}
+			} 
 		}
 		// the random number is 1.0
 		return charArray[3];
