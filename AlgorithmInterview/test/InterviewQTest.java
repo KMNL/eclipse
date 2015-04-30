@@ -31,6 +31,29 @@ public class InterviewQTest {
 	}
 	
 	@Test
+	public void testFlattenLinkList(){
+		System.out.println("start testFlattenLinkList");
+		// build list
+		// A->B->C
+		MyLinkList g = new MyLinkList('g', null, null);
+		MyLinkList f = new MyLinkList('f', g, null);
+		MyLinkList e = new MyLinkList('e', null, null);
+		MyLinkList d = new MyLinkList('d', f, e);
+		MyLinkList c = new MyLinkList('c', d, null);
+		MyLinkList b = new MyLinkList('b', null, c);
+		MyLinkList a = new MyLinkList('a', b,null);
+		MyLinkList newLL = InterviewQ.flattenLinkList(a);
+		MyLinkList temp = newLL;
+		while(temp != null)
+		{
+			System.out.println(temp.value);
+//			assertNull("down object should be null", temp.down);
+			temp = temp.next;
+		}
+	}
+	
+	
+	@Test
 	public void testGetWeightedRandomChar(){
 		for(int i=0; i<20; ++i){
 			System.out.println(InterviewQ.findWeightedRandomChar());

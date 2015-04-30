@@ -85,7 +85,38 @@ public class InterviewQ {
 		return maxProfit;
 	}
 	
-	public 
+	/**
+	 * Flatten link list which has a down pointer.
+	 * Flatten rule: get the down pointer first then the next
+	 * @param root
+	 * @return
+	 */
+	public static MyLinkList flattenLinkList(MyLinkList root){
+		// the last object
+		if(root.next == null && root.down == null){
+			return root;
+		}
+		MyLinkList lastObj = null;
+		MyLinkList flattenList = new MyLinkList(root.value, root.next, root.down);
+		if(root.down != null){
+			flattenList.next = flattenLinkList(root.down);
+			// look for the end of link list and add root.next to the end
+			MyLinkList tempObj = flattenList.next;
+			while ( tempObj != null){
+				lastObj = tempObj;
+				tempObj = tempObj.next;
+			}
+		}
+		if(root.next != null){
+			if(lastObj == null)
+				flattenList.next = flattenLinkList(root.next);
+			else{
+				lastObj.next = flattenLinkList(root.next);
+			}
+		}
+		
+		return flattenList;
+	}
 	/**
 	 * Write a program that prints the following strings with the given probability
 	 * Output string   Probability
